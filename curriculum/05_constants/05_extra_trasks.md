@@ -32,8 +32,6 @@ Adott egy régi, nem általad írt, de a rendszerben kötelezően használandó 
 * A `Sensor` osztálynak írj egy `public void runDiagnostics() const` nevű **konstans tagfüggvényét**.
 * A `runDiagnostics` metóduson belül hívd meg a globális `legacyHardwareTest` függvényt, paraméterként átadva a `pinId` memóriacímét. Mivel a metódusod `const`, az osztály adattagjai (így a `pinId` is) `const`-ként viselkednek benne. Használd a `const_cast` operátort, hogy sikeresen át tudd adni a paramétert a régi függvénynek fordítási hiba nélkül!
 
-Íme két komplexebb, összefogó feladat, amelyek ötvözik az eddig tanultakat (konstans mutatók, konstans tagváltozók, referenciák osztályon belül, `mutable`, `const_cast`, öröklés), de szigorúan tartják magukat a korlátozásokhoz (nincs polimorfizmus, nincsenek vektorok).
-
 ### 5. Feladat: Okosotthon Szenzorhálózat
 
 Készíts egy rendszert, ami egy okosotthon hőmérséklet-érzékelőjét modellezi! A feladat fókuszában a konstans tagváltozók, a `mutable` kulcsszó és a konstansokra mutató pointerek állnak.
