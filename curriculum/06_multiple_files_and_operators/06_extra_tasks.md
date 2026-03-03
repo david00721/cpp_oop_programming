@@ -1,4 +1,60 @@
-## 1. Feladat: Űrkolónia Erőforrás-kezelő Rendszer
+## 1. Feladat: Az "Élő Adatkapcsolat" megértése
+
+### Leírás
+
+Készíts egy olyan osztályt, amely nem saját adatot tárol, hanem egy külső forrásból származó egész számot figyel. A cél annak bizonyítása, hogy a referencia tagváltozó használatával az objektum képes "követni" egy külső változó értékének módosulását anélkül, hogy az objektum metódusait explicit módon újra meg kellene hívni az adatfrissítéshez.
+
+### Részfeladatok:
+
+1. **Osztálystruktúra:** Hozz létre egy osztályt, amelynek egyetlen `int&` típusú privát adattagja van.
+2. **Konstruktor:** Valósítsd meg az inicializálást az **inicializáló lista** segítségével (mivel a referenciát csak itt lehet bekötni).
+3. **Megfigyelés:** A `main` függvényben hozz létre egy lokális változót, és add át az objektumnak.
+4. **Tesztelés:** * Írasd ki az értéket az objektumon keresztül.
+* Módosítsd a külső változót közvetlenül.
+* Írasd ki ismét az értéket az objektumon keresztül, és figyeld meg a változást!
+
+---
+
+## 2. Feladat: A 2D Vektor Osztály
+
+Készíts egy `Vector2D` osztályt, amely egy kétdimenziós síkbeli vektort reprezentál ($x$ és $y$ koordinátákkal). A cél, hogy a vektorokkal úgy tudjunk számolni, mintha beépített típusok (például `int` vagy `double`) lennének.
+
+### Követelmények
+
+1. **Adattagok:**
+* `double x, y;` (legyenek publikusak vagy rendelkezzenek getterekkel).
+
+
+2. **Operátorok, amiket meg kell valósítanod:**
+* **`operator+`**: Két vektor összeadása ($\mathbf{a} + \mathbf{b} = (a_x + b_x, a_y + b_y)$).
+* **`operator*` (Skaláris szorzás):** Egy vektor szorzása egy számmal (double).
+* **`operator*` (Dot product):** Két vektor skaláris szorzata ($a_x \cdot b_x + a_y \cdot b_y$). *Megjegyzés: Itt látszik az overloading ereje, ugyanaz a jel, más viselkedés.*
+* **`operator==`**: Két vektor egyenlőségének vizsgálata (figyelve a lebegőpontos hibahatárra!).
+* **`operator-` (Unáris mínusz):** Irányítsa az ellentétes irányba a vektort (pl. `-v`).
+
+
+3. **Bónusz:**
+* **`operator[]`**: Indexelő operátor, ahol `v[0]` az x-et, `v[1]` az y-t adja vissza.
+
+
+### Próbáld ki ezt a kódrészletet a `main`-ben:
+
+```cpp
+Vector2D v1(3, 4);
+Vector2D v2(1, 2);
+
+Vector2D v3 = v1 + v2;       // (4, 6)
+double dot = v1 * v2;        // 3*1 + 4*2 = 11
+Vector2D v4 = v1 * 2.0;      // (6, 8)
+
+std::cout << "v1 + v2 = " << v3 << std::endl;
+std::cout << "v1 . v2 = " << dot << std::endl;
+
+```
+
+---
+
+## 3. Feladat: Űrkolónia Erőforrás-kezelő Rendszer
 
 A projektben két osztályt kell létrehoznod, megfelelően szétdarabolva header és source fájlokra (`ResourcePack.h`, `ResourcePack.cpp`, `GuardedResourcePack.h`, `GuardedResourcePack.cpp`, valamint a `main.cpp`).
 
@@ -64,7 +120,7 @@ A `main`-ben szimuláld a működést!
 ---
 
 
-## 2. Feladat: Szigorúan Titkos Kormányzati Archívum
+## 4. Feladat: Szigorúan Titkos Kormányzati Archívum
 
 Egy hírszerző ügynökség dokumentumkezelő rendszerének magját kell leprogramoznod. A rendszernek garantálnia kell az adatok sérthetetlenségét, miközben precíz naplózást végez. Három osztályt kell megtervezned:
 
