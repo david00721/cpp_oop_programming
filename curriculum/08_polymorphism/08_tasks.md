@@ -49,8 +49,8 @@
 **Feladat:**
 1. Készíts egy `Employee` ősosztályt. Legyen egy `protected` (védett) adattagja: `double baseSalary`. Ezt a konstruktorból kapja meg.
 2. Írj egy `virtual double calculatePay() const` metódust, ami alapértelmezetten visszaadja a `baseSalary`-t.
-3. Származtass egy `Manager` osztályt. Neki legyen egy privát `double bonus` adattagja. Írd felül a `calculatePay()` metódust úgy, hogy a `baseSalary + bonus` értékkel térjen vissza.
-4. Származtass egy `Intern` (Gyakornok) osztályt. A gyakornok csak a fizetés felét kapja, így az ő `calculatePay()` metódusa adja vissza a `baseSalary * 0.5` értéket.
+3. Származtass egy `Manager` osztályt. Neki legyen egy privát `double bonus` adattagja. Írd felül a `calculatePay()` metódust úgy, hogy a `baseSalary + bonus` értékkel térjen vissza. **Mivel ez a menedzseri fizetési formula kőbe van vésve, használd a `final` kulcsszót a metóduson, hogy egyetlen jövőbeli alosztály (pl. `SeniorManager`) se tudja ezt a logikát felülírni!**
+4. Származtass egy `Intern` (Gyakornok) osztályt. **Mivel a gyakornok a hierarchia legalja, garantáld a `final` kulcsszóval, hogy magából az `Intern` osztályból már ne lehessen tovább származtatni (ne lehessen pl. `JuniorIntern` osztályt létrehozni)!** A gyakornok csak a fizetés felét kapja... *(a többi marad a régi)*.
 5. A `main`-ben hozz létre egy `Employee*` tömböt, tegyél bele egy sima alkalmazottat, egy menedzsert és egy gyakornokot, majd hívd meg mindegyikre a fizetés-kalkuláló függvényt!
 
 ---
